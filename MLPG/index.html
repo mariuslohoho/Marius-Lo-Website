@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="javascript.css">
+
+    
+
+
+</head>
+
+<body class="content">
+
+    
+
+    <br><br><br><br><br><br><br><br><br>
+    
+    <h1>Marius Lo's Password Generator</h1>
+    
+    <p>MLPG is a user-friendly, free website that generates strong and customizable passwords without requiring personal
+        information or registration.</p>
+    
+        <div class="div">
+        <p class="p">
+
+        <div class="copy-pass">
+            <input type="text" id="inputbox" value="Javascript Error" class="copy-pass-input" readonly>
+
+            <button class="copy-pass-button">
+                <i class="fa-solid fa-copy"></i>
+            </button>
+
+            <button id="genBtn" onclick="generate()" class="genBtn">
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </button>
+        </div>
+        </p>
+    </div>
+
+
+    <fieldset>
+        <legend>Choose your password's features</legend>
+        
+        <div>
+
+            <!-- upper -->
+            <div>
+                <input class="checkbox" type="checkbox" id="upper" checked>
+                <label for="Uppercase">Uppercase</label>
+            </div>
+            
+            <!-- lower -->
+            <div>
+                <input class="checkbox" type="checkbox" id="lower" checked>
+                <label for="Lowercase">Lowercase</label>
+            </div>
+        </div>
+
+        <div>
+            <!-- numbers -->
+            <div>
+                <input class="checkbox" type="checkbox" id="number">
+                <label for="Numbers">Numbers</label>
+            </div>
+            
+            <!-- symbol -->
+            <div>
+                <input class="checkbox" type="checkbox" id="symbol">
+                <label for="Symbols">Symbols</label>
+            </div>
+        </div>
+
+        <div>
+            <!-- characters -->
+            <div>
+                <label for="scales">Characters</label>
+                <input class="number" type="number" id="myText" value="11" oninput="changeSlider()" onblur="checkBoxValue()" min="1" max="50">
+            </div>
+            <div>
+                <input type="range" min="1" max="50" class="slider" id="mySlider" oninput="changeNumber()">
+            </div>
+        </div>
+        
+    </fieldset>
+    
+
+
+    <script src="javascript.js"></script>
+    <script>
+        document.querySelectorAll(".copy-pass").forEach((copyLinkParent) => {
+            const inputField = copyLinkParent.querySelector(".copy-pass-input");
+            const copyButton = copyLinkParent.querySelector(".copy-pass-button");
+            
+
+            inputField.addEventListener("focus", () => inputField.select());
+
+            copyButton.addEventListener("click", () => {
+                const text = inputField.value;
+                
+
+                inputField.select();
+                navigator.clipboard.writeText(text);
+                
+                
+                inputField.value = "Copied!";
+                setTimeout(() => (inputField.value = text), 750);
+            })
+        })
+
+
+        // marius code
+
+        
+
+        generate()
+
+
+        function changeSlider() {
+            let y = document.getElementById("myText").value;
+            document.getElementById("mySlider").value = y;
+        }
+
+        function changeNumber() {
+            let text = document.getElementById("mySlider").value;
+            document.getElementById("myText").value = text;
+        }
+        
+        function checkBoxValue() {
+            let value = document.getElementById("myText").value;
+
+            if (value > 50){
+                document.getElementById("myText").value = 50;
+            }
+
+            if (value < 1){
+                document.getElementById("myText").value = 1;
+            }
+        }
+
+
+
+
+
+    </script>
+    <script src="https://kit.fontawesome.com/a733c6ae20.js" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
