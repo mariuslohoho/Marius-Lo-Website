@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Questioning Guy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="popup.css">
+
+</head>
+
+<body class="content">
+
+    <br><br><br><br><br><br><br><br><br>
+
+    <h1>The Questioning Guy</h1>
+
+    <p>"The Questioning Guy" is a quiz game that challenges players to use their critical thinking skills to solve
+        complex riddles and puzzles. The game provides an interactive and thrilling experience as players gather clues
+        and solve mysteries..</p>
+
+
+
+
+    <fieldset>
+        
+        <legend id="legend">Question: </legend>
+
+        <div>
+            
+            <input title="Enter a answer!" type="text" id="inputBox" placeholder="Enter the answer!" value="" class="inputBox">
+    
+            <button title="Clear" id="clear" class="clearBtn button" onclick="clears()">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+    
+            <button title="Sumbit" id="submit" onclick="submit()" class="submitBTn button">
+                <i class="fa-solid fa-check"></i>
+            </button>
+
+
+
+
+
+
+            <div class="popup center">
+                <div class="icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="title">
+                    Correct!
+                </div>
+                <div class="description">
+                    You've answer the correct answer!
+                </div>
+                <div class="dismiss-btn">
+                    <button id="dismiss-popup-btn" onclick="closePopup()">
+                        Nice!
+                    </button>
+                </div>
+            </div>
+
+            <div class="popup2 center">
+                <div class="icon">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="title">
+                    Incorrect!
+                </div>
+                <div class="description" id="des">
+                    You've answer the wrong answer!<br>
+                    Correct Answer is:
+                </div>
+                <div class="dismiss-btn">
+                    <button id="dismiss-popup2-btn" onclick="closePopup2()">
+                        ok :(
+                    </button>
+                </div>
+            </div>
+
+            <div class="popup3 center">
+                <div class="icon">
+                    <i class="fa-brands fa-gg"></i>
+                </div>
+                <div class="title">
+                    GG!
+                </div>
+                <div class="description" id="desc">
+                    You've completed the quiz!<br>
+                    Your score is
+                </div>
+                <div class="dismiss-btn">
+                    <button id="dismiss-popup3-btn" onclick="location.reload()">
+                        Restart
+                    </button>
+                </div>
+            </div>
+
+
+
+            <div id="overlay"></div>
+
+        </div>
+
+    </fieldset>
+
+    
+
+
+
+    <script src="javascript.js"></script>
+    <script src="popup.js"></script>
+    <script src="https://kit.fontawesome.com/a733c6ae20.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
