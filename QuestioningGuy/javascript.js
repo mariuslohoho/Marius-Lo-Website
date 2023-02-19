@@ -40,10 +40,11 @@ function submit(){
 
     
     i += 1
+}
 
+function close(){
     if (i == Answers.length){
         document.getElementById("desc").innerHTML = "You've completed the quiz! <br> Your score is " + score+ "/" + Answers.length
         openPopup3()
     }
-
 }
