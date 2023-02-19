@@ -9,6 +9,7 @@ function openPopup(){
 function closePopup(){
     document.getElementsByClassName("popup")[0].classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
+    close()
 }
 
 // WRONG POPUP
@@ -21,6 +22,7 @@ function openPopup2(){
 function closePopup2(){
     document.getElementsByClassName("popup2")[0].classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
+    close()
 }
 
 // END POPUP
